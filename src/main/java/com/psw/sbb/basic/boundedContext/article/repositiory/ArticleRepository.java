@@ -22,7 +22,7 @@ public class ArticleRepository {
         .forEach(i -> articles.add(new Article(i, "제목" + i, "내용" + i)));
   }
 
-  public List<Article> findByArticles() {
+  public List<Article> findAll() {
     return articles;
   }
 }

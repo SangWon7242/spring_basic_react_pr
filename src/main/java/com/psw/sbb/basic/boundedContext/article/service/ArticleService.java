@@ -14,7 +14,7 @@ public class ArticleService {
     this.articleRepository = articleRepository;
   }
 
-  public List<Article> findByArticles() {
-    return articleRepository.findByArticles();
+  public List<Article> findAll() {
+    return articleRepository.findAll();
   }
 }
