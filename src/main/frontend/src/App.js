@@ -1,5 +1,6 @@
-import { BrowserRouter, Routes, Route, json } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
+import "./index.css";
 
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -42,9 +43,32 @@ const List = () => {
   );
 };
 
+const Header = () => {
+  return (
+    <header className="top-bar h-[80px] bg-[#dfdfdf]">
+      <div className="con mx-auto max-w-[1100px] flex h-full">
+        <div className="logo-box">
+          <Link to="/">로고</Link>
+        </div>
+        <nav className="menu-1">
+          <ul className="flex gap-x-[10px]">
+            <li>
+              <Link to="/">글쓰기</Link>
+            </li>
+            <li>
+              <Link to="/list">리스트</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  );
+};
+
 function App() {
   return (
     <BrowserRouter>
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/list" element={<List />} />
